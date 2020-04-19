@@ -12,3 +12,6 @@ Make sure you have node and npm installed. Clone the repo, and run `npm install`
 ### Example
 It managed with text which consists 575 000 characters just in 0.5 seconds. (4 GB RAM, 2.3 GHz)
 ![Example](https://github.com/dendiod/abbreviator/blob/master/example.PNG)
+
+### License
+MIT
