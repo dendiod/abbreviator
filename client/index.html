@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+		<title>Abbreviator</title>
+	</head>
+	<body>	
+	<textarea  class = "textarea" id = "input" placeholder="Input data"></textarea>
+	<textarea  class = "textarea" id = "output" placeholder="Output data" disabled></textarea>
+	<p></p>
+	<div class="col-sm-2">
+		<button type="button" class="btn btn-primary" id = "getResult" value = ""  onclick="getResult()">Get Result</button>
+	</div>
+	<form name="languages">
+		<div class="col-sm-1">
+			<input type="radio" id="first" value="english" checked name="lang"/> <label for="first">English</label>
+		</div>
+		<div class="col-sm-1">
+			<input type="radio" id="second" value="spanish" name="lang"/> <label for="second">Espanol</label>
+		</div>
+		<div class="col-sm-1">
+			<input type="radio" id="third" value="russian" name="lang"/> <label for="third">Русский</label>
+		</div>
+		<div class="col-sm-1">
+			<input type="radio" id="fourth" value="ukrainian" name="lang"/> <label for="fourth">Українська</label>
+		</div>
+	</form>
+	<script src="setLang.js"></script>
+	<script src="abbreviate.js"></script>	
+	</body>
+</html>

@@ -1,0 +1,5 @@
+Datos de entrada
+Datos resultantes
+Obtener resultado
+El texto se redujo en 
+  caracteres
