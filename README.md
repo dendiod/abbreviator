@@ -1,5 +1,5 @@
 ### abbreviator
-Reduce the number of characters keeping the text understandable. Supports 4 languages: English, Spanish, Russian, Ukrainian.
+Reducing the number of characters keeping the text understandable. It uses prefixes dictionaries. Supports 4 languages: English, Spanish, Russian, Ukrainian.
 Reduces by an average of:
 - <a>English: 7%</a>
 - <a>Spanish: 9%</a>
