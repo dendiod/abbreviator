@@ -15,29 +15,20 @@
 		<button type="button" class="btn btn-primary" id = "getResult" value = ""  onclick="getResult()">Get Result</button>
 	</div>
 	<form name="languages">
-		<div id="app-4">
-			<ol>
-			  <li v-for="todo in todos">
-				{{ todo.text }}
-			  </li>
-			</ol>
-		</div>
-		<div class="col-sm-1">
-			<input type="radio" class="form-check-input" id="first" value="english" checked name="lang"/> <label for="first">English</label>
-		</div>
-		<div class="col-sm-1">
-			<input type="radio" class="form-check-input" id="second" value="spanish" name="lang"/> <label for="second">Espanol</label>
-		</div>
-		<div class="col-sm-1">
-			<input type="radio" class="form-check-input" id="third" value="russian" name="lang"/> <label for="third">Русский</label>
-		</div>
-		<div class="col-sm-1">
-			<input type="radio" class="form-check-input" id="fourth" value="ukrainian" name="lang"/> <label for="fourth">Українська</label>
+		<div id="radioButtonListCmp" >
+			<div v-for="radioButton in radioButtonList">
+				<div class="form-check col-sm-1">
+					<input class="form-check-input" type="radio" name="lang" :id="radioButton.id" :checked="radioButton.checked">
+					<label class="form-check-label" :for="radioButton.id">
+						{{radioButton.label}}
+					</label>
+				</div>
+			</div>			
 		</div>
 	</form>
-	<script src="setLang.js"></script>
-	<script src="setOutput.js"></script>
 	<script src="./../customUtil/abbreviator.js"></script>
+	<script src="setLang.js"></script>
+	<script src="setOutput.js"></script>	
 	<script src="index.js"></script>	
 	</body>
 </html>

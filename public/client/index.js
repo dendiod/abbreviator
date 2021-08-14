@@ -1,10 +1,21 @@
-var app4 = new Vue({
-    el: '#app-4',
+var radioButtonListCmp = new Vue({
+    el: '#radioButtonListCmp',
     data: {
-      todos: [
-        { text: 'Learn JavaScript' },
-        { text: 'Learn Vue' },
-        { text: 'Build something awesome' }
-      ]
+      radioButtonList: getRadioButtonList()
     }
 })
+
+function getRadioButtonList(){
+  let radioButtonList = [];
+  const languageList = ['English', 'Espanol', 'Русский', 'Українська'];
+  let idCounter = 0;
+  for(const language of languageList){
+    radioButtonList.push({
+      id: idCounter++,
+      label: language
+    });
+  }
+  radioButtonList[0].checked = true;
+
+  return radioButtonList;
+}

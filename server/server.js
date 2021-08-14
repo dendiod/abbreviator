@@ -40,13 +40,19 @@ app.post("/lang", jsonParser, function (request, response) {
 });
 
 app.post("/abbreviate", jsonParser, function (request, response) {
-	let textToAbbreviate = request.body.textToAbbreviate;
-	const language = request.body.lang;
+	const textToAbbreviate = request.body.textToAbbreviate;	
+	const lettersToAbbr = request.body.lettersToAbbr 
+	? request.body.lettersToAbbr
+	: abbreviator.getDefaultLettersToAbbr();
+	const language = request.body.lang
+	? request.body.lang
+	: abbreviator.getLanguageList()[0];
 	const path = getPathByLanguage(language);
 	const languageDetails = getLanguageDetails(path);
 	const input = {
 		textToAbbreviate: textToAbbreviate,
-		languageDetails: languageDetails
+		languageDetails: languageDetails,
+		lettersToAbbr: lettersToAbbr
 	};
 	const abbreviatedText = abbreviator.getAbbreviatedText(input);
 	response.json({"abbreviatedText": abbreviatedText});  

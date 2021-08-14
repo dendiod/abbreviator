@@ -1,4 +1,9 @@
 .textarea {
-	width: 100%;
-	height: 46vh;
+	width: 98vw;
+	height: 42vh;
+	margin: 1vh;
+}
+
+#output{
+	margin-bottom: 2vh;
 }

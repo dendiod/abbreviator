@@ -91,17 +91,25 @@ function processWord(lastIndex) {
 	}	
 }
 
-const lettersToAbbr = 5;
+let lettersToAbbr;
 let prefixes;
 let utf;
 let output = '', lettersCounter = 0;
 let textToAbbreviate;
+const languageList = ['en', 'es', 'ru', 'ua'];
 
 (function(exports){
    exports.getAbbreviatedText = function(input){
 	   prefixes = input.languageDetails.prefixes;
 	   utf = input.languageDetails.utf;
 	   textToAbbreviate = input.textToAbbreviate;
+	   lettersToAbbr = input.lettersToAbbr;
         return inspectText();
     };
-})(typeof exports === 'undefined'? this['abbreviate']={}: exports);
+	exports.getLanguageList = function(){
+		 return languageList;
+	 };
+	 exports.getDefaultLettersToAbbr = function(){
+		 return 5;
+	 };
+})(typeof exports === 'undefined'? this['abbreviator']={}: exports);

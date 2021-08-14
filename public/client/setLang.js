@@ -1,7 +1,7 @@
 function setLanguage(i) {
 	if(i == radioIndex && radioIndex)
 		return;
-	let req = JSON.stringify({lang: folders[i]});
+	let req = JSON.stringify({lang: languageList[i]});
 	let request = new XMLHttpRequest();
 	request.open("POST", "/lang", true);   
 	request.setRequestHeader("Content-Type", "application/json");
@@ -16,8 +16,7 @@ function setLanguage(i) {
 	request.send(req);
 }
 
-var folders = ['en', 'es', 'ru', 'ua'];
-var radioIndex, message = [];
+let radioIndex, message = [];
 
 for (let i = 0; i < languages.lang.length; i++) {
     languages.lang[i].addEventListener("click", function(){
