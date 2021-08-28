@@ -1,7 +1,7 @@
-function setLanguage(i) {
-	if(i == radioIndex && radioIndex)
-		return;
-	let req = JSON.stringify({lang: languageList[i]});
+function setLanguage(language) {
+	console.log('language', language);
+	selectedLanguage = language;
+	let req = JSON.stringify({lang: selectedLanguage});
 	let request = new XMLHttpRequest();
 	request.open("POST", "/lang", true);   
 	request.setRequestHeader("Content-Type", "application/json");
@@ -11,16 +11,18 @@ function setLanguage(i) {
 		document.getElementById('output').placeholder = data[1];
 		document.getElementById('getResult').innerHTML = data[2];
 		message = [data[3], data[4]];
-		radioIndex = i;
+		//document.getElementById('charsToAbbreviateInput').innerHTML = data[5];
 	});
 	request.send(req);
 }
 
-let radioIndex, message = [];
-
-for (let i = 0; i < languages.lang.length; i++) {
-    languages.lang[i].addEventListener("click", function(){
-    setLanguage(i);});
+function radioButtonOnChange(radioButton){
+	console.log('radioButtonOnChange value', radioButton);
+	setLanguage(radioButton.value);
 }
 
-setLanguage(0);
+let message = [];
+
+const languageValueList = abbreviator.getLanguageList();
+let selectedLanguage = languageValueList[0];
+setLanguage(selectedLanguage);

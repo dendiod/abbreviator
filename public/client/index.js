@@ -7,14 +7,19 @@ var radioButtonListCmp = new Vue({
 
 function getRadioButtonList(){
   let radioButtonList = [];
-  const languageList = ['English', 'Espanol', 'Русский', 'Українська'];
+  const languageLabelList = ['English', 'Espanol', 'Русский', 'Українська'];
+  
   let idCounter = 0;
-  for(const language of languageList){
+  let cssClass = 'form-check ';  
+  for(const language of languageLabelList){
     radioButtonList.push({
-      id: idCounter++,
-      label: language
+	  value: languageValueList[idCounter],
+      id: 'radioButton' + idCounter++,	  
+      label: language,
+	  cssClass: cssClass + 'col-sm-1'
     });
   }
+  radioButtonList[languageLabelList.length-1].cssClass = cssClass + 'col-sm-2';
   radioButtonList[0].checked = true;
 
   return radioButtonList;

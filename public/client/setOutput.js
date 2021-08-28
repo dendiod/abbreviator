@@ -1,11 +1,11 @@
 function getResult() {
-	let req = JSON.stringify({lang: languageList[radioIndex]});
+	let req = JSON.stringify({lang: selectedLanguage});
 	let request = new XMLHttpRequest();
 	request.open("POST", "/prefixes", true);   
 	request.setRequestHeader("Content-Type", "application/json");
 	request.addEventListener("load", function () {
 		const textToAbbreviate = document.getElementById('input').value;
-		const lettersToAbbr = 5;
+		const lettersToAbbr = parseInt(document.getElementById('charsToAbbreviateInput').value);
 		const input = {
 			textToAbbreviate: textToAbbreviate,
 			languageDetails: JSON.parse(request.response),

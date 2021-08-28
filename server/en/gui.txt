@@ -3,3 +3,4 @@ Output data
 Get result
 Text was reduced by 
  characters
+Number of chars to abbreviate

@@ -1,0 +1,3 @@
+generate content of gui.txt files
+animation success
+best results save to db
