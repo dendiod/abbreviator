@@ -61,4 +61,4 @@ app.post("/abbreviate", jsonParser, function (request, response) {
 let port = 3000;
 app.listen(port);
 	
-console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
+console.log("Static file server running at\n  => http://localhost:" + port + "/client\nCTRL + C to shutdown");
